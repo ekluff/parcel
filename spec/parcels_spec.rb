@@ -1,7 +1,7 @@
 require('rspec')
 require('parcel')
 
-describe(Parcel) do
+describe(Parcels) do
   describe('#parcel') do
     # code
   end
