@@ -6,7 +6,7 @@ class Parcels
     @weight = weight
   end
 
-  define_method(:parcel) do
+  define_method(:volume) do
     volume = @length * @width * @height
   end
 end
