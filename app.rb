@@ -8,14 +8,14 @@ get ('/') do
 end
 
 get('/result') do
-  @length = params.fetch('length')
-  @width = params.fetch('width')
-  @height = params.fetch('height')
-  @distance = params.fetch('distance')
-  @speed = params.fetch('speed')
-  @package = Parcels.new()
+  @length = params.fetch('length').to_i
+  @width = params.fetch('width').to_i
+  @height = params.fetch('height').to_i
+  @distance = params.fetch('distance').to_i
+  @days = params.fetch('days').to_i
+  @package = Parcels.new(@length, @width, @height, @weight)
   @volume = @package.volume
-  @cost_to_ship = @package.cost_to_ship(@distance, @speed)
+  @cost_to_ship = @package.cost_to_ship(@distance, @days)
 
   erb(:result)
 end
